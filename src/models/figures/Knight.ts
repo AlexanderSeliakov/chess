@@ -2,14 +2,15 @@ import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 import { ChessPiece } from "./ChessPiece";
 import { ChessPieceName } from "../interfaces/uiInterfaces";
-
-import black from '../../assets/black-knight.png';
-import white from '../../assets/white-knight.png';
-
 export class Knight extends ChessPiece {
+    // black img
+    black = 'assets/black-knight.png';
+    // white img
+    white = 'assets/white-knight.png';
+
     constructor(color: Colors, cell: Cell) {
         super(color, cell);
-        this.ChessPieceLogo = color === Colors.black ? black : white
+        this.ChessPieceLogo = color === Colors.black ? this.black : this.white
         this.ChessPieceName = ChessPieceName.Knight
       }
       

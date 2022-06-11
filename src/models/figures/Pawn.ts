@@ -2,17 +2,17 @@ import { Cell } from "../Cell";
 import { Colors } from "../Colors";
 import { ChessPiece } from "./ChessPiece";
 import { ChessPieceName } from "../interfaces/uiInterfaces";
-
-import black from '../../assets/black-pawn.png';
-import white from '../../assets/white-pawn.png';
-
 export class Pawn extends ChessPiece {
+  // black img
+  black = 'assets/black-pawn.png';
+  // white img
+  white = 'assets/white-pawn.png';
 
   private isFirstStep: boolean = true
 
     constructor(color: Colors, cell: Cell) {
         super(color, cell);
-        this.ChessPieceLogo = color === Colors.black ? black : white
+        this.ChessPieceLogo = color === Colors.black ? this.black : this.white
         this.ChessPieceName = ChessPieceName.Pawn
       }
 

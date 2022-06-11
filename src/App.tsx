@@ -38,13 +38,15 @@ function App() {
   return ( 
     
     <div className="app">
-      <button onClick={startNewGame}>Restart</button>
-      <BoardComponent 
-      board={board} 
-      setBoard={setBoard} 
-      currentPlayer = {currentPlayer}
-      swapPlayer = {swapPlayer}
-      />
+      <div>
+        <button className='restart' onClick={startNewGame}>Restart</button>
+        <BoardComponent 
+        board={board} 
+        setBoard={setBoard} 
+        currentPlayer = {currentPlayer}
+        swapPlayer = {swapPlayer}
+        />
+      </div>
     </div>
   );
 }
