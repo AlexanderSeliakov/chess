@@ -2,6 +2,10 @@ import { Board } from '../Board';
 import { Cell } from '../Cell';
 import { Player } from '../Player';
 
+export enum Colors {
+  white = 'white',
+  black = 'black',
+}
 export interface BoardProps {
   board: Board,
   setBoard: (board: Board) => void,

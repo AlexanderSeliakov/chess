@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
 import { Board } from './models/Board';
 import { Player } from './models/Player';
-import { Colors } from './models/Colors';
-
+import { Colors } from './models/interfaces/uiInterfaces';
 import BoardComponent from './Components/BoardComponent';
 
 import './App.css';

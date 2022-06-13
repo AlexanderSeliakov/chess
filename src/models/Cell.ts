@@ -2,11 +2,9 @@ import {
    Board
 } from './Board';
 import {
-   Colors
-} from './Colors';
-import {
    ChessPiece
 } from './figures/ChessPiece';
+import { Colors } from './interfaces/uiInterfaces';
 
 export class Cell {
    /**
@@ -60,15 +58,16 @@ export class Cell {
       this.id = Math.random();
    }
 
-
+   /**
+    * Checks if cell doesn't contain any chess piece
+    * @returns 
+    */
    isEmpty(){
-      console.log(this.chessPiece, 'this.chessPiece, isEmpty');
-      console.log(this.board.getCell(this.x, this.y), 'this.board.getCell(this.x, y)');
       return this.chessPiece === null
    }
 
    /**
-    * Method check if cell contains enemy chessPiece
+    * Method check if the cell contains enemy chessPiece
     * @param target target cell
     * @returns 
     */
@@ -80,7 +79,7 @@ export class Cell {
    }
 
    /**
-    * Check how many available cells for next move
+    * Check how many vertical cells available for next move
     * @param target target cell
     */
    isEmptyVertical(target: Cell): boolean {
@@ -97,6 +96,10 @@ export class Cell {
       return true
    }
 
+   /**
+    * Check how many horizontal cells available for next move
+    * @param target target cell
+    */
    isEmptyHorizontal(target: Cell): boolean { 
       if(this.y !== target.y) {return false}
 
@@ -111,6 +114,10 @@ export class Cell {
       return true
    }
 
+   /**
+    * Check how many diagonal cells available for next move
+    * @param target target cell
+    */
    isEmptyDiagonal(target: Cell): boolean {
       const diagX = Math.abs(target.x - this.x)
       const diagY = Math.abs(target.y - this.y)
@@ -129,13 +136,17 @@ export class Cell {
 
    }
 
-   // Loop dependency!! cell <-> chessPiece
+   // Loop dependency!! cell <-> chessPiece 
+   // TODO: CHANGE LOGIC and remove it
    setChessPiece(chessPiece: ChessPiece){
       this.chessPiece = chessPiece
       this.chessPiece.cell = this
    }
 
-
+   /**
+    * Logic for moving ChessPiece
+    * @param target 
+    */
    moveChessPiece(target: Cell) {
       if (this.chessPiece?.canMove(target)) {
          this.chessPiece.moveChessPiece(target)

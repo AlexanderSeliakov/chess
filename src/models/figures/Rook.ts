@@ -1,7 +1,6 @@
 import { Cell } from "../Cell";
-import { Colors } from "../Colors";
 import { ChessPiece } from "./ChessPiece";
-import { ChessPieceName } from "../interfaces/uiInterfaces";
+import { ChessPieceName, Colors } from "../interfaces/uiInterfaces";
 export class Rook extends ChessPiece {
     // black img
     black = 'assets/black-queen.png';

@@ -1,7 +1,6 @@
-import { Colors } from '../Colors';
 import logo from '../../assets/black-king.png';
 import { Cell } from '../Cell';
-import { ChessPieceName } from '../interfaces/uiInterfaces';
+import { ChessPieceName, Colors } from '../interfaces/uiInterfaces';
 
 export class ChessPiece {
   color: Colors;
@@ -43,8 +42,7 @@ export class ChessPiece {
     return true
   }
 
+  // TODO: should I make it abstract??
   moveChessPiece(target: Cell): void {
-    console.log('moveChessPiece');
-    
   }
 }

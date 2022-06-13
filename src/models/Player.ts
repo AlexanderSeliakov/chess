@@ -1,5 +1,4 @@
-import { Colors } from "./Colors";
-
+import { Colors } from "./interfaces/uiInterfaces";
 export class Player {
 
     color: Colors
